@@ -1,0 +1,129 @@
+---
+title: "Getting Started with Next.js 14: A Comprehensive Guide"
+excerpt: "Learn how to set up and build modern web applications with Next.js 14, the latest version of the popular React framework."
+date: "2024-05-01"
+author: "Burhan Ali"
+tags: ["Next.js", "React", "Web Development"]
+image: "/blog/getting-started-nextjs.jpg"
+---
+
+# Getting Started with Next.js 14: A Comprehensive Guide
+
+Next.js has evolved significantly with version 14, introducing powerful features that enhance developer experience and application performance. In this guide, we'll explore how to set up a Next.js 14 project and leverage its key capabilities.
+
+## What is Next.js?
+
+Next.js is a React framework that provides a structure and features for creating full-stack web applications. It simplifies many aspects of modern web development, including:
+
+- **Server-side rendering (SSR)** and **static site generation (SSG)**
+- **File-based routing**
+- **API routes**
+- **Built-in CSS and Sass support**
+- **Image optimization**
+- **And much more**
+
+## Setting Up a New Next.js 14 Project
+
+Getting started with Next.js 14 is straightforward. You'll need Node.js 18.17 or later installed on your machine.
+
+```bash
+npx create-next-app@latest my-next-app
+```
+
+During setup, you'll be prompted with several options:
+
+```
+Would you like to use TypeScript? Yes
+Would you like to use ESLint? Yes
+Would you like to use Tailwind CSS? Yes
+Would you like to use the `src/` directory? Yes
+Would you like to use App Router? Yes
+Would you like to customize the default import alias? No
+```
+
+## Understanding the App Router
+
+Next.js 14 uses the App Router by default, which is based on React Server Components. This new paradigm offers several advantages:
+
+1. **Server Components**: Render on the server with zero JavaScript sent to the client
+2. **Layouts**: Share UI between routes while preserving state
+3. **Streaming**: Progressively send UI from the server
+4. **Data Fetching**: Simplified data fetching with async/await in components
+
+## Creating Your First Page
+
+With the App Router, pages are defined using the `page.js` (or `page.tsx`) file within a folder structure that maps to the URL path.
+
+```jsx
+// src/app/page.tsx
+export default function Home() {
+  return (
+    <main className="flex min-h-screen flex-col items-center justify-between p-24">
+      <h1 className="text-4xl font-bold">Welcome to Next.js 14!</h1>
+      <p>Get started by editing this page.</p>
+    </main>
+  );
+}
+```
+
+## Server Components vs. Client Components
+
+In Next.js 14, components are Server Components by default. To make a component a Client Component, add the `"use client"` directive at the top of the file:
+
+```jsx
+"use client";
+
+import { useState } from "react";
+
+export default function Counter() {
+  const [count, setCount] = useState(0);
+  
+  return (
+    <div>
+      <p>Count: {count}</p>
+      <button onClick={() => setCount(count + 1)}>Increment</button>
+    </div>
+  );
+}
+```
+
+## Data Fetching
+
+Next.js 14 simplifies data fetching within components:
+
+```jsx
+// src/app/users/page.tsx
+async function getUsers() {
+  const res = await fetch('https://jsonplaceholder.typicode.com/users');
+  if (!res.ok) throw new Error('Failed to fetch users');
+  return res.json();
+}
+
+export default async function UsersPage() {
+  const users = await getUsers();
+  
+  return (
+    <div>
+      <h1>Users</h1>
+      <ul>
+        {users.map((user) => (
+          <li key={user.id}>{user.name}</li>
+        ))}
+      </ul>
+    </div>
+  );
+}
+```
+
+## Conclusion
+
+Next.js 14 represents a significant step forward in React-based web development. The App Router, Server Components, and streamlined data fetching make it easier than ever to build performant, SEO-friendly applications.
+
+In future tutorials, we'll dive deeper into advanced features like:
+
+- Creating API routes
+- Authentication and authorization
+- Database integration
+- Deployment strategies
+
+Stay tuned for more content on mastering Next.js 14! 

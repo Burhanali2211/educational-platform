@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600">
+  <!-- Background -->
+  <rect width="800" height="600" fill="#f8fafc"/>
+  
+  <!-- Sidebar -->
+  <rect x="0" y="0" width="200" height="600" fill="#e2e8f0"/>
+  <rect x="40" y="40" width="120" height="30" rx="4" fill="#94a3b8"/>
+  <rect x="40" y="100" width="120" height="20" rx="4" fill="#94a3b8"/>
+  <rect x="40" y="140" width="120" height="20" rx="4" fill="#94a3b8"/>
+  <rect x="40" y="180" width="120" height="20" rx="4" fill="#94a3b8"/>
+  
+  <!-- Main Content -->
+  <!-- Stats Cards -->
+  <rect x="240" y="40" width="160" height="100" rx="8" fill="#bfdbfe"/>
+  <rect x="420" y="40" width="160" height="100" rx="8" fill="#ddd6fe"/>
+  <rect x="600" y="40" width="160" height="100" rx="8" fill="#fde68a"/>
+  
+  <!-- Chart Area -->
+  <rect x="240" y="160" width="520" height="200" rx="8" fill="#e2e8f0"/>
+  <!-- Line Chart -->
+  <path d="M260,320 Q380,220 500,280 T740,240" stroke="#94a3b8" fill="none" stroke-width="3"/>
+  
+  <!-- Table -->
+  <rect x="240" y="380" width="520" height="180" rx="8" fill="#e2e8f0"/>
+  <rect x="260" y="400" width="480" height="30" rx="4" fill="#94a3b8"/>
+  <rect x="260" y="440" width="480" height="30" rx="4" fill="#cbd5e1"/>
+  <rect x="260" y="480" width="480" height="30" rx="4" fill="#cbd5e1"/>
+  <rect x="260" y="520" width="480" height="30" rx="4" fill="#cbd5e1"/>
+</svg> 
